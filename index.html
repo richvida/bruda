@@ -575,10 +575,10 @@
 
 		</div> <!-- container -->
 
-		<footer>&copy; Copyright 2014 Bruda | Made in Virginia Beach, VA</footer>
+		<footer>&copy; MMXV Bruda, LLC. | Made in Virginia Beach, VA</footer>
 
 		<script type="text/javascript">
-			var wall = new freewall("#wall");
+			var wall = new freewall( '#wall' );
 			wall.reset({
 				selector: '.post',
 				animate: true,
@@ -590,17 +590,8 @@
 					wall.fitWidth();
 				}
 			});
-			var pic = wall.container.find('.post');
-			var length = pic.length;
-			pic.css({visibility: 'hidden'});
-			pic.find('img').load(function() {
-				-- length;
-				if (!length) {
-					setTimeout(function() {
-						pic.css({visibility: 'visible'});
-						wall.fitWidth();
-					}, 505);
-				}
+			wall.container.find( '.post img' ).load( function() {
+				wall.fitWidth();
 			});
 		</script>
 
